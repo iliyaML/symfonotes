@@ -12,4 +12,10 @@
 
     # Rewrite all other queries to the front controller.
     RewriteRule .? %{ENV:BASE}/index.php [L]
+
+    #Heroku way
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https 
+
+    # If neither above conditions are met, redirect to https
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
