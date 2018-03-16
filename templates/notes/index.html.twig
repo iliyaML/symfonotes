@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SymfoNotes{% endblock %}
+
+{% block body %}
+  {% if notes %}
+    <table id="notes" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Note Title</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for note in notes %}
+          <tr>
+            <td>{{ note }}</td>
+            <td>
+              <a href="/note/" class="btn btn-dark">Show</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No notes to display</p>
+  {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+  <script src="/js/main.js"></script>
+{% endblock %}
