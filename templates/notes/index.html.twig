@@ -14,9 +14,9 @@
       <tbody>
         {% for note in notes %}
           <tr>
-            <td>{{ note }}</td>
+            <td>{{ note.title }}</td>
             <td>
-              <a href="/note/" class="btn btn-dark">Show</a>
+              <a href="/note/{{ note.id }}" class="btn btn-dark">Show</a>
             </td>
           </tr>
         {% endfor %}
