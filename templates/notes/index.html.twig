@@ -17,6 +17,8 @@
             <td>{{ note.title }}</td>
             <td>
               <a href="/note/{{ note.id }}" class="btn btn-dark">Show</a>
+              <a href="/note/edit/{{ note.id }}" class="btn btn-primary">Edit</a>
+              <a href="#" class="btn btn-danger delete-note" data-id="{{ note.id }}">Delete</a>
             </td>
           </tr>
         {% endfor %}
